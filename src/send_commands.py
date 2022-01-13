@@ -18,19 +18,20 @@ def terminate_program(signal_number, frame):
 def main():
     signal.signal(signal.SIGINT, terminate_program)
 
-    # rob = robobo.HardwareRobobo(camera=True).connect(address="192.168.1.7")
-    rob = robobo.SimulationRobobo().connect(address='192.168.1.6', port=19997)
+    rob = robobo.HardwareRobobo(camera=True).connect(address="10.15.3.243")
+    #rob = robobo.SimulationRobobo().connect(address='192.168.2.4', port=19997)
 
-    rob.play_simulation()
+    #rob.play_simulation()
 
-    # Following code moves the robot
-    for i in range(10):
-            print("robobo is at {}".format(rob.position()))
-            rob.move(5, 5, 2000)
+    #### Following code moves the robot
+    #for i in range(10):
+           # print("robobo is at {}".format(rob.position()))
+           # rob.move(5, 5, 2000)
    
-    print("robobo is at {}".format(rob.position()))
-    rob.sleep(1)
+   # print("robobo is at {}".format(rob.position()))
+    #rob.sleep(1)
 
+    
     # Following code moves the phone stand
     rob.set_phone_pan(343, 100)
     rob.set_phone_tilt(109, 100)
